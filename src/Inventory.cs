@@ -53,7 +53,7 @@ class Inventory
     {
         int total = 0;
 
-        foreach (Item item in items.Values)
+        foreach (Item item in items.Values)      2222222
         {
             total += item.Weight;
         }
