@@ -1,4 +1,4 @@
-class Item
+public class Item
 {
 	public int Weight { get; }
 	public string Description { get; }

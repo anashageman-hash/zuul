@@ -5,7 +5,7 @@ class Game
 	// Private fields
 	private Parser parser;
 	private Player player;
-
+	 // Public properties public Player Player { get { return player; } } public Room CurrentRoom { get { return currentRoom; } set { currentRoom = value; }
 	// Constructor
 	public Game()
 	{
@@ -17,13 +17,13 @@ class Game
 	// Initialise the Rooms
 	private void CreateRooms()
 	{
-		Room classroom = new Room("You are in a classroom.");
-		Room hallway = new Room("You are in a long hallway.");
-		Room cafeteria = new Room("You are in the cafeteria.");
-		Room library = new Room("You are in the library.");
-		Room computerRoom = new Room("You are in the computer room.");
-		Room janitorRoom = new Room("You are in the janitor room.");
-		Room exit = new Room("You are at the school exit.");
+		Room classroom = new Room("in a classroom.");
+		Room hallway = new Room("in a long hallway.");
+		Room cafeteria = new Room("in the cafeteria.");
+		Room library = new Room("in the library.");
+		Room computerRoom = new Room("in the computer room.");
+		Room janitorRoom = new Room("in the janitor room.");
+		Room exit = new Room("at the school exit.");
 
 		classroom.AddExit("east", hallway);
 
@@ -154,9 +154,12 @@ class Game
 		Console.WriteLine(player.CurrentRoom.GetLongDescription());
 	}
 
+	// ✅ Alleen hier is de opdracht ingevuld
 	private void PrintStatus()
 	{
 		Console.WriteLine("Health: " + player.Health);
-		Console.WriteLine("You are carrying " + player.InventoryWeight + " kg of items.");
+		Console.WriteLine("Room items: " + player.CurrentRoom.Chest.Show());
+		Console.WriteLine("Backpack items: " + player.ShowBackpack());
 	}
 }
+

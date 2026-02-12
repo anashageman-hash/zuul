@@ -1,17 +1,24 @@
 using System.Collections.Generic;
 
-class Room
+public class Room
 {
 	// Private fields
 	private string description;
 	private Dictionary<string, Room> exits; // stores exits of this room.
+	private Inventory chest; // items in the room
+
+	// Property (alleen getter)
+	public Inventory Chest
+	{
+		get { return chest; }
+	}
 
 	// Create a room described "description". Initially, it has no exits.
-	// "description" is something like "in a kitchen" or "in a court yard".
 	public Room(string desc)
 	{
 		description = desc;
 		exits = new Dictionary<string, Room>();
+		chest = new Inventory(999999); // <-- TOEGEVOEGD
 	}
 
 	// Define an exit for this room.

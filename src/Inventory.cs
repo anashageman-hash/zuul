@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-class Inventory
+public class Inventory
 {
     // fields
     private int maxWeight;
@@ -14,8 +14,9 @@ class Inventory
     }
 
     // Put item in inventory
-    public bool Put(string itemName, Item item)
+    public bool Put(Item item)
     {
+        string itemName = item.Description;
         // check if item already exists
         if (items.ContainsKey(itemName))
         {
@@ -53,7 +54,7 @@ class Inventory
     {
         int total = 0;
 
-        foreach (Item item in items.Values)      2222222
+        foreach (Item item in items.Values)
         {
             total += item.Weight;
         }
@@ -65,5 +66,44 @@ class Inventory
     public int FreeWeight()
     {
         return maxWeight - TotalWeight();
+    }
+
+    // Remove item from inventory
+    public bool Remove(string itemName)
+    {
+        if (!items.ContainsKey(itemName))
+        {
+            return false;
+        }
+        items.Remove(itemName);
+        return true;
+    }
+
+    // Peek item in inventory (without removing)
+    public Item Peek(string itemName)
+    {
+        if (!items.ContainsKey(itemName))
+        {
+            return null;
+        }
+        return items[itemName];
+    }
+
+    // Show inventory contents
+    public string Show()
+    {
+        if (items.Count == 0)
+        {
+            return "Your inventory is empty.";
+        }
+        else
+        {
+            string result = "You are carrying:\n";
+            foreach (var item in items.Values)
+            {
+                result += "- " + item.Description + " (" + item.Weight + "kg)\n";
+            }
+            return result.TrimEnd('\n');
+        }
     }
 }
