@@ -154,7 +154,6 @@ class Game
 		Console.WriteLine(player.CurrentRoom.GetLongDescription());
 	}
 
-	// ✅ Alleen hier is de opdracht ingevuld
 	private void PrintStatus()
 	{
 		Console.WriteLine("Health: " + player.Health);
