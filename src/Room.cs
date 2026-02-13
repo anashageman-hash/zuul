@@ -18,7 +18,7 @@ public class Room
 	{
 		description = desc;
 		exits = new Dictionary<string, Room>();
-		chest = new Inventory(999999); // <-- TOEGEVOEGD
+		chest = new Inventory(25); // <-- TOEGEVOEGD
 	}
 
 	// Define an exit for this room.
