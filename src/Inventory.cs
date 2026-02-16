@@ -82,28 +82,29 @@ public class Inventory
     // Peek item in inventory (without removing)
     public Item Peek(string itemName)
     {
-        if (!items.ContainsKey(itemName))
-        {
-            return null;
-        }
-        return items[itemName];
+        // Kijk of het item in de lijst zit
+        if (items.ContainsKey(itemName))
+            return items[itemName];  // zo ja = geef het terug
+        else
+            return null;             // zo nee = geef niks terug
     }
-
     // Show inventory contents
     public string Show()
     {
         if (items.Count == 0)
         {
             return "Your inventory is empty.";
-        }
-        else
+            
+        }  
+       else
+    {
+        string result = "You are carrying:\n";
+
+        foreach (var item in items.Values)
         {
-            string result = "You are carrying:\n";
-            foreach (var item in items.Values)
-            {
-                result += "- " + item.Description + " (" + item.Weight + "kg)\n";
-            }
-            return result.TrimEnd('\n');
+            result += "- " + item.Description + " (" + item.Weight + "kg)\n";
         }
+
+        return result; 
     }
-}
+

@@ -85,7 +85,7 @@ class Game
 
 		if (command.IsUnknown())
 		{
-			Console.WriteLine("I don't know what you mean...");
+			Console.WriteLine("I don't know what you mean.");
 			return wantToQuit;
 		}
 

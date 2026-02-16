@@ -12,7 +12,7 @@ public class Room
         get { return chest; }
     }
 
-<<<<<<< HEAD
+
     // Constructor
     public Room(string desc)
     {
@@ -20,15 +20,14 @@ public class Room
         exits = new Dictionary<string, Room>();
         chest = new Inventory(25);
     }
-=======
+
 	// Create a room described "description". Initially, it has no exits.
 	public Room(string desc)
 	{
 		description = desc;
 		exits = new Dictionary<string, Room>();
-		chest = new Inventory(25); // <-- TOEGEVOEGD
+		chest = new Inventory(25); // het chest heeft een max gewicht van 25kg
 	}
->>>>>>> 8efd205b78fcb986b3fa795146b535859be50cae
 
     // Exit toevoegen
     public void AddExit(string direction, Room neighbor)
