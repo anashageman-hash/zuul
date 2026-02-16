@@ -15,6 +15,9 @@ class CommandLibrary
 		validCommands.Add("look");
 		validCommands.Add("quit");
 		validCommands.Add("status"); 
+		validCommands.Add("take"); // <-- TOEGEVOEGD
+        validCommands.Add("drop"); // <-- TOEGEVOEGD
+
 	}
 
 	// Check whether a given string is a valid command word
